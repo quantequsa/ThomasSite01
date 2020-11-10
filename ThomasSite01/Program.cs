@@ -1,6 +1,6 @@
 ﻿using DataAccessSite07;
 using System;
-
+using System.Linq;
 namespace ThomasSite01
 {
     class Program
@@ -32,6 +32,32 @@ namespace ThomasSite01
                         Console.WriteLine($"> " + coffeeShop.Location);
                     }
                 }
+                else
+                {
+                    var foundCoffeeShops = coffeeShops
+                    .Where(x => x.Location.StartsWith(line, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+                    if (foundCoffeeShops.Count == 0)
+                    {
+                        Console.WriteLine($"> Command '{line}' not found");
+                    }
+                    else if (foundCoffeeShops.Count == 1)
+                    {
+                        var coffeeShop = foundCoffeeShops.Single();
+                        Console.WriteLine($"> Location: {coffeeShop.Location}");
+                        Console.WriteLine($"> Beans in stock: {coffeeShop.BeansInStockInKg} Kg");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"> Multiple matching coffee shop command found:");
+                        foreach (var coffeeType in foundCoffeeShops)
+                        {
+                            Console.WriteLine($"> {coffeeType.Location}");
+                        }
+                    }
+
+                }
+
             }
         }
     }
