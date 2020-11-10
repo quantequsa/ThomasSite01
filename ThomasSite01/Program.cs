@@ -8,13 +8,20 @@ namespace ThomasSite01
         static void Main(string[] args)
         {
             Console.WriteLine("ThomasSite01 - Shop Info Tool!");
-            Console.WriteLine("Write 'help' to list available commands");
+            Console.WriteLine("Write 'help' to list available commands, " +
+  "write 'quit' to exit application by Thomas");
 
             var coffeeShopDataProvider = new CoffeeShopDataProvider();
 
             while (true)
             {
                 var line = Console.ReadLine();
+
+                if (string.Equals("quit", line, StringComparison.OrdinalIgnoreCase))
+                {
+                    break;
+                }
+
                 var coffeeShops = coffeeShopDataProvider.LoadCoffeeShops();
 
                 if (string.Equals("help", line, StringComparison.OrdinalIgnoreCase))
