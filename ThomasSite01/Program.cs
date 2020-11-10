@@ -8,7 +8,7 @@ namespace ThomasSite01
         static void Main(string[] args)
         {
             Console.WriteLine("ThomasSite01 - Shop Info Tool!");
-            Console.WriteLine("Write 'help' to list available commands");
+            Console.WriteLine("Write 'help' to list available commands By Tim");
 
             var coffeeShopDataProvider = new CoffeeShopDataProvider();
 
