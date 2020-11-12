@@ -31,7 +31,7 @@ namespace ThomasSite01
                 {
                     //var commandHandler = new HelpCommandHandler(coffeeShops);
                     commandHandler = new HelpCommandHandler(coffeeShops); //ctrl. creates a class in a new file and we need to instantiate from this new class just created : HelpCommandHandler
-                    commandHandler.HandleCommand();                           //ctrl. create a new method in the CoffeeShopCommandHandler newly created
+                    //commandHandler.HandleCommand();                           //ctrl. create a new method in the CoffeeShopCommandHandler newly created
                     ///Need to MOVE because it got to big: using two inputs coffeeShops from this program.cs
                     //Console.WriteLine("> Available coffee shop commands:");
                     //foreach (var coffeeShop in coffeeShops)
@@ -43,7 +43,7 @@ namespace ThomasSite01
                 {
                     //var commandHandler = new CoffeeShopCommandHandler(coffeeShops, line);
                     commandHandler = new CoffeeShopCommandHandler(coffeeShops, line);  //ctrl. creates a class in a new file and we need to instantiate from this new class just created : CoffeeShopCommandHandler
-                    commandHandler.HandleCommand();                                        //ctrl. create a new method in the CoffeeShopCommandHandler newly created
+                    //commandHandler.HandleCommand();                                        //ctrl. create a new method in the CoffeeShopCommandHandler newly created
                     ///Here is the new class CoffeeShopCommandHandler
                     /*
                     using DataAccessSite07.Model;
@@ -102,7 +102,7 @@ namespace ThomasSite01
                     //}
 
                 }
-
+                commandHandler.HandleCommand();
             }
         }
     }
