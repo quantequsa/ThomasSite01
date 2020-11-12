@@ -24,7 +24,8 @@ namespace ThomasSite01
             Console.WriteLine("> Available coffee shop commands:");
             foreach (var coffeeShop in coffeeShops)
             {
-                Console.WriteLine($"> " + coffeeShop.Location);
+                //Console.WriteLine($"> " + coffeeShop.Location);
+                Console.WriteLine($"> { coffeeShop.Location}");     //Replace with the use of an interpolated string here
             }
         }
     }
