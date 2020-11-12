@@ -23,11 +23,14 @@ namespace ThomasSite01
                 }
 
                 var coffeeShops = coffeeShopDataProvider.LoadCoffeeShops();
+
+                ICommandHandler commandHandler;  //Call this commandHandler just once to optimize further
                 ///Optimized code in the Program.cs using two command Handlers with two HandleCommand method with the same name.
                 ///We could optimize further if we have an interface for both command handlers so place cursor in the HelpCommandHandler class and press ctrl. to extract interface
                 if (string.Equals("help", line, StringComparison.OrdinalIgnoreCase))
                 {
-                    var commandHandler = new HelpCommandHandler(coffeeShops); //ctrl. creates a class in a new file and we need to instantiate from this new class just created : HelpCommandHandler
+                    //var commandHandler = new HelpCommandHandler(coffeeShops);
+                    commandHandler = new HelpCommandHandler(coffeeShops); //ctrl. creates a class in a new file and we need to instantiate from this new class just created : HelpCommandHandler
                     commandHandler.HandleCommand();                           //ctrl. create a new method in the CoffeeShopCommandHandler newly created
                     ///Need to MOVE because it got to big: using two inputs coffeeShops from this program.cs
                     //Console.WriteLine("> Available coffee shop commands:");
@@ -38,7 +41,8 @@ namespace ThomasSite01
                 }
                 else
                 {
-                    var commandHandler = new CoffeeShopCommandHandler(coffeeShops, line);  //ctrl. creates a class in a new file and we need to instantiate from this new class just created : CoffeeShopCommandHandler
+                    //var commandHandler = new CoffeeShopCommandHandler(coffeeShops, line);
+                    commandHandler = new CoffeeShopCommandHandler(coffeeShops, line);  //ctrl. creates a class in a new file and we need to instantiate from this new class just created : CoffeeShopCommandHandler
                     commandHandler.HandleCommand();                                        //ctrl. create a new method in the CoffeeShopCommandHandler newly created
                     ///Here is the new class CoffeeShopCommandHandler
                     /*
