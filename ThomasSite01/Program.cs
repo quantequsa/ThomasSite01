@@ -23,7 +23,8 @@ namespace ThomasSite01
                 }
 
                 var coffeeShops = coffeeShopDataProvider.LoadCoffeeShops();
-
+                ///Optimized code in the Program.cs using two command Handlers with two HandleCommand method with the same name.
+                ///We could optimize further if we have an interface for both command handlers so place cursor in the HelpCommandHandler class and press ctrl. to extract interface
                 if (string.Equals("help", line, StringComparison.OrdinalIgnoreCase))
                 {
                     var commandHandler = new HelpCommandHandler(coffeeShops); //ctrl. creates a class in a new file and we need to instantiate from this new class just created : HelpCommandHandler

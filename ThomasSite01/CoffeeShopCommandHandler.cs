@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace ThomasSite01
 {
-    internal class CoffeeShopCommandHandler
+    internal class CoffeeShopCommandHandler : ICommandHandler  //so the CoffeeShopCommandHandler also can implement this interface ICommandHandler from ICommandHandler.cs class
     {
         ///the parameters are stored here in these private fields:
         private IEnumerable<CoffeeShop> coffeeShops;

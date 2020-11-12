@@ -4,8 +4,11 @@ using System.Collections.Generic;
 
 namespace ThomasSite01
 {
+    /// <summary>
+    /// We could optimize further if we have an interface for both command handlers so place cursor in the HelpCommandHandler class and press ctrl. to extract interface as new ICommandHandler.cs class
 
-    public class HelpCommandHandler
+    /// </summary>
+    public class HelpCommandHandler : ICommandHandler  //so the HelpCommandHandler implements this interface ICommandHandler from ICommandHandler.cs class
     {
         private IEnumerable<CoffeeShop> coffeeShops;
 
