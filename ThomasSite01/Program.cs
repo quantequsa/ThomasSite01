@@ -26,11 +26,14 @@ namespace ThomasSite01
 
                 if (string.Equals("help", line, StringComparison.OrdinalIgnoreCase))
                 {
-                    Console.WriteLine("> Available coffee shop commands:");
-                    foreach (var coffeeShop in coffeeShops)
-                    {
-                        Console.WriteLine($"> " + coffeeShop.Location);
-                    }
+                    var commandHandler = new HelpCommandHandler(coffeeShops); //ctrl. creates a class in a new file and we need to instantiate from this new class just created : HelpCommandHandler
+                    commandHandler.HandleCommand();                           //ctrl. create a new method in the CoffeeShopCommandHandler newly created
+                    ///Need to MOVE because it got to big: using two inputs coffeeShops from this program.cs
+                    //Console.WriteLine("> Available coffee shop commands:");
+                    //foreach (var coffeeShop in coffeeShops)
+                    //{
+                    //    Console.WriteLine($"> " + coffeeShop.Location);
+                    //}
                 }
                 else
                 {

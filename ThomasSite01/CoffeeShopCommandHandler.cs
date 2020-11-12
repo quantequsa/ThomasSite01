@@ -51,7 +51,7 @@ namespace ThomasSite01
                     Console.WriteLine($"> {coffeeType.Location}");
                 }
             }
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }
